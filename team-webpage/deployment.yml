@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team-webpage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: team-webpage
+  template:
+    metadata:
+      labels:
+        app: team-webpage
+    spec:
+      containers:
+      - name: team-webpage
+        image: xukus/test:0.0.1
+        ports:
+        - containerPort: 80
+
